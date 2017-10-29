@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="lcleite.github.com.helloandroidjava.view.SettingsActivity">
+
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/settings_tweets"
+            android:textSize="16sp" />
+
+        <SeekBar
+            android:id="@+id/sbarTweetsSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSettings"
+            android:layout_toLeftOf="@+id/tvTweetsSettingsValue"
+            android:progressTint="@color/colorPrimary"
+            android:thumbTint="@color/colorPrimary"
+            android:layout_marginTop="8dp"
+            android:progress="5"
+            android:max="10" />
+
+        <TextView
+            android:id="@+id/tvTweetsSettingsValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/sbarTweetsSettings"
+            android:text="@string/settings_tweets_default"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+
