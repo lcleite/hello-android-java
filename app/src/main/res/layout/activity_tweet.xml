@@ -46,13 +46,13 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="@android:color/black"
-                        android:text="@string/default_user_name"/>
+                        android:content="@string/default_user_name"/>
 
                     <TextView
                         android:id="@+id/tvUserScreenName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/default_user_screen_name"/>
+                        android:content="@string/default_user_screen_name"/>
                 </LinearLayout>
             </RelativeLayout>
 
@@ -61,14 +61,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:text="@string/default_created_at" />
+                android:content="@string/default_created_at" />
 
             <TextView
                 android:id="@+id/tvText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@string/default_tweet"
+                android:content="@string/default_tweet"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
@@ -117,7 +117,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hashtags"/>
+                    android:content="@string/hashtags"/>
 
                 <TextView
                     android:id="@+id/tvHashtags"
@@ -138,7 +138,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mentions"/>
+                    android:content="@string/mentions"/>
 
                 <TextView
                     android:id="@+id/tvMentions"
@@ -157,7 +157,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/links"/>
+                    android:content="@string/links"/>
 
                 <TextView
                     android:id="@+id/tvLinks"

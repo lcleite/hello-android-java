@@ -2,12 +2,6 @@ package lcleite.github.com.helloandroidjava.mapper;
 
 import org.json.JSONObject;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import lcleite.github.com.helloandroidjava.model.Tweet;
 import lcleite.github.com.helloandroidjava.utils.DateUtils;
 
@@ -18,12 +12,12 @@ import lcleite.github.com.helloandroidjava.utils.DateUtils;
 public class TweetJsonMapper implements JsonMapper<Tweet> {
 
     private TwitterUserJsonMapper twitterUserJsonMapper;
-    private TweetTextJsonMapper tweetTextJsonMapper;
+    private TweetContentJsonMapper tweetContentJsonMapper;
     private TweetMediaJsonMapper tweetMediaJsonMapper;
 
     public TweetJsonMapper() {
         twitterUserJsonMapper = new TwitterUserJsonMapper();
-        tweetTextJsonMapper = new TweetTextJsonMapper();
+        tweetContentJsonMapper = new TweetContentJsonMapper();
         tweetMediaJsonMapper = new TweetMediaJsonMapper();
     }
 
@@ -33,7 +27,7 @@ public class TweetJsonMapper implements JsonMapper<Tweet> {
 
         tweet.setCreatedAt(DateUtils.createDateFromString(jsonObject.optString("created_at")));
         tweet.setUser(twitterUserJsonMapper.toModel(jsonObject));
-        tweet.setText(tweetTextJsonMapper.toModel(jsonObject));
+        tweet.setContent(tweetContentJsonMapper.toModel(jsonObject));
         tweet.setMedia(tweetMediaJsonMapper.toModel(jsonObject));
 
         return tweet;

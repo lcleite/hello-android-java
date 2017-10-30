@@ -24,7 +24,7 @@
         android:layout_toRightOf="@+id/ivUserProfile"
         android:layout_marginRight="8dp"
         android:textColor="@android:color/black"
-        android:text="@string/default_user_name"
+        android:content="@string/default_user_name"
         android:textStyle="bold" />
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/tvUserName"
         android:textColor="@color/grayText"
-        android:text="@string/default_user_screen_name"/>
+        android:content="@string/default_user_screen_name"/>
 
     <TextView
         android:id="@+id/tvText"
@@ -45,7 +45,7 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:minLines="2"
-        android:text="@string/default_tweet"
+        android:content="@string/default_tweet"
         android:textColor="@android:color/black" />
 
     <LinearLayout
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:textColor="@color/grayText"
-            android:text="@string/default_counter_number"/>
+            android:content="@string/default_counter_number"/>
 
         <ImageView
             android:id="@+id/ivMentions"
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
-            android:text="@string/default_counter_number"
+            android:content="@string/default_counter_number"
             android:textColor="@color/grayText" />
 
         <ImageView
@@ -110,6 +110,6 @@
         android:layout_alignParentRight="true"
         android:gravity="right"
         android:textColor="@color/grayText"
-        android:text="@string/default_created_at"/>
+        android:content="@string/default_created_at"/>
 
 </RelativeLayout>

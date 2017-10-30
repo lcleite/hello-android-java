@@ -10,6 +10,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import lcleite.github.com.helloandroidjava.R;
+import lcleite.github.com.helloandroidjava.utils.AndroidUtils;
 
 public class SettingsActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
@@ -41,7 +42,7 @@ public class SettingsActivity extends AppCompatActivity implements SeekBar.OnSee
     }
 
     private void getSavedSettings() {
-        SharedPreferences sharedPrefs = getSharedPreferences();
+        SharedPreferences sharedPrefs = AndroidUtils.getPreferences(this);
         int tweetsSettingsValue = sharedPrefs.getInt(getString(R.string.preference_max_tweets), 10);
         int actualValue = tweetsSettingsValue - 5;
 
@@ -58,10 +59,6 @@ public class SettingsActivity extends AppCompatActivity implements SeekBar.OnSee
         }
 
         return true;
-    }
-
-    private SharedPreferences getSharedPreferences(){
-        return getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
     }
 
     @Override
@@ -84,7 +81,7 @@ public class SettingsActivity extends AppCompatActivity implements SeekBar.OnSee
     }
 
     private void saveSettings() {
-        SharedPreferences sharedPrefs = getSharedPreferences();
+        SharedPreferences sharedPrefs = AndroidUtils.getPreferences(this);
         SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putInt(getString(R.string.preference_max_tweets), Integer.valueOf(tvTweetsSettingsValue.getText().toString()));
         editor.commit();

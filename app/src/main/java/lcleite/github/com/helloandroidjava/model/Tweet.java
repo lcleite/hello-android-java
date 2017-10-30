@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class Tweet implements Parcelable{
     private TwitterUser user;
-    private TweetContent text;
+    private TweetContent content;
     private TweetMedia media;
     private Date createdAt;
 
@@ -19,7 +19,7 @@ public class Tweet implements Parcelable{
 
     protected Tweet(Parcel in) {
         user = in.readParcelable(TwitterUser.class.getClassLoader());
-        text = in.readParcelable(TweetContent.class.getClassLoader());
+        content = in.readParcelable(TweetContent.class.getClassLoader());
         media = in.readParcelable(TweetMedia.class.getClassLoader());
         createdAt = new Date(in.readLong());
     }
@@ -45,11 +45,11 @@ public class Tweet implements Parcelable{
     }
 
     public TweetContent getContent() {
-        return text;
+        return content;
     }
 
-    public void setText(TweetContent text) {
-        this.text = text;
+    public void setContent(TweetContent content) {
+        this.content = content;
     }
 
     public TweetMedia getMedia() {
@@ -72,7 +72,7 @@ public class Tweet implements Parcelable{
     public String toString() {
         return "Tweet{" +
                 "user=" + user +
-                ", text=" + text +
+                ", content=" + content +
                 ", media=" + media +
                 ", createdAt=" + createdAt +
                 '}';
@@ -86,7 +86,7 @@ public class Tweet implements Parcelable{
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeParcelable(user, i);
-        parcel.writeParcelable(text, i);
+        parcel.writeParcelable(content, i);
         parcel.writeParcelable(media, i);
         parcel.writeLong(createdAt.getTime());
     }
